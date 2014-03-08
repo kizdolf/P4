@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 22:20:05 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 03:33:15 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/08 05:53:34 by ebelhadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ t_puiss		*new_puiss(char **av)
 	p4 = (t_puiss *)ft_memalloc(sizeof(t_puiss));
 	if ((p4->nb_col = ft_atoi(av[1])) < 7)
 	{
-		error_entry(p4->nb_col);
+		error_entry(p4->nb_col, 0);
 		return (NULL);
 	}
 	if ((p4->nb_lines = ft_atoi(av[2])) < 6)
 	{
-		error_entry(p4->nb_lines);
+		error_entry(p4->nb_lines, 1);
 		return (NULL);
 	}
 	p4->array = (int **)ft_memalloc(sizeof(int *) * (p4->nb_lines + 1));

@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 21:46:22 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 03:38:40 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/08 05:39:17 by ebelhadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@
 
 
 int			check_entry(int ac, char **av);
-int			error_entry(int);
+int			error_entry(int, int);
 
 #endif
