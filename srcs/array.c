@@ -6,13 +6,14 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 22:20:05 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 03:03:41 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/08 03:33:15 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/array.h"
 #include "../includes/main.h"
 #include "../libft/libft.h"
+#include "../includes/errors.h"
 
 t_puiss		*new_puiss(char **av)
 {
@@ -21,9 +22,15 @@ t_puiss		*new_puiss(char **av)
 
 	p4 = (t_puiss *)ft_memalloc(sizeof(t_puiss));
 	if ((p4->nb_col = ft_atoi(av[1])) < 7)
-		p4->nb_col = 7;
+	{
+		error_entry(p4->nb_col);
+		return (NULL);
+	}
 	if ((p4->nb_lines = ft_atoi(av[2])) < 6)
-		p4->nb_lines = 6;
+	{
+		error_entry(p4->nb_lines);
+		return (NULL);
+	}
 	p4->array = (int **)ft_memalloc(sizeof(int *) * (p4->nb_lines + 1));
 	i = 0;
 	while (i < p4->nb_lines)

@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 20:36:15 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 03:03:34 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/08 03:47:08 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int		main(int ac, char **av)
 		if ((add_one_piece(puiss, choice, num_play)) != NULL)
 			print_p4(puiss);
 		num_play = (num_play == 1) ? 2 : 1;
-		if ((winner = game_over(p4)) != 0)
-			return (end_game(winner, p4));
+		if ((winner = game_over(puiss)) != 0)
+			return (end_game(winner, puiss));
 	}
 	return (0);
 }
