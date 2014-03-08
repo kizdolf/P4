@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game.h                                             :+:      :+:    :+:   */
+/*   lib_ctrl.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/03/08 02:30:59 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 04:38:42 by jburet           ###   ########.fr       */
+/*   Created: 2014/03/08 05:42:30 by jburet            #+#    #+#             */
+/*   Updated: 2014/03/08 05:54:55 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GAME_H
-# define GAME_H
-# include "main.h"
+#include "../includes/ctrl.h"
 
-int			game_over(t_puiss *p4);
-int			end_game(int winner);
+int		horizontal_win(int i, int j, int **tab)
+{
+	int		cmp;
 
-
-#endif /*GAME_H*/
+	cmp = tab[i][j];
+	printf("DEBUG HORIZ: cmp = %d.\n", cmp);
+	if (tab[i + 1][j] == cmp && tab[i + 2][j] == cmp && tab[i + 3][j] == cmp)
+		return (1);
+	return (0);
+}

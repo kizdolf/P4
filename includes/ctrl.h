@@ -6,19 +6,25 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 03:05:45 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 04:01:21 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/08 05:53:24 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CTRL_H
 # define CTRL_H
-
+#include "main.h"
 /*
  * ctrl_array.c
  */
 int			ctrl_horizontal(t_puiss *p4);
 int			ctrl_vertical(t_puiss *p4);
 int			ctrl_diagonal(t_puiss *p4);
+int			player_no_coins(t_puiss *p4);
+int			array_is_full(t_puiss *p4);
 
+/*
+ * lib_ctrl.c
+ */
+int		horizontal_win(int i, int j, int **tab);
 
 #endif /*CTRL_H*/

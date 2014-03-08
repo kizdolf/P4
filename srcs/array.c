@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 22:20:05 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 05:53:34 by ebelhadj         ###   ########.fr       */
+/*   Updated: 2014/03/08 05:23:55 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ t_puiss		*new_puiss(char **av)
 	p4 = (t_puiss *)ft_memalloc(sizeof(t_puiss));
 	if ((p4->nb_col = ft_atoi(av[1])) < 7)
 	{
-		error_entry(p4->nb_col, 0);
+		error_entry(p4->nb_col);
 		return (NULL);
 	}
 	if ((p4->nb_lines = ft_atoi(av[2])) < 6)
 	{
-		error_entry(p4->nb_lines, 1);
+		error_entry(p4->nb_lines);
 		return (NULL);
 	}
 	p4->array = (int **)ft_memalloc(sizeof(int *) * (p4->nb_lines + 1));
@@ -78,17 +78,18 @@ static void	print_first_line(t_puiss *p4)
 	ft_putchar(' ');
 	while (i < p4->nb_col)
 	{
-		if (i < 10)
+		if (i + 1 < 10)
 			ft_putstr("| ");
 		else
 			ft_putchar('|');
 		ft_putnbr(i + 1);
-		if (i < 100)
+		if (i + 1 < 100)
 			ft_putchar(' ');
 		i++;
 	}
 	ft_putchar('\n');
 	i = 0;
+	ft_putchar(' ');
 	while (i++ < (p4->nb_col * 4))
 		ft_putchar('-');
 	ft_putchar('\n');
@@ -108,8 +109,10 @@ void		print_p4(t_puiss *p4)
 		while (col < p4->nb_col)
 			print_one_case(line, col++, p4);
 		line++;
+		ft_putchar('|');
 		ft_putstr("\n");
 		col = 0;
+		ft_putchar(' ');
 		while (col++ < (p4->nb_col * 4))
 			ft_putchar('-');
 		ft_putchar('\n');
