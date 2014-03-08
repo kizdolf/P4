@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 20:36:15 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 03:47:08 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/08 05:12:29 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,20 @@
 #include "../includes/players.h"
 #include "../includes/game.h"
 
+int			play(t_puiss *p4, int num_play)
+{
+	int		choice;
+
+	if (num_play != NUM_IA)
+		choice = get_choice_player(p4);
+	if (add_one_piece(p4, choice, num_play) != NULL)
+		print_p4(p4);
+	return ((num_play == 1) ? 2 : 1);
+}
+
 int		main(int ac, char **av)
 {
 	t_puiss		*puiss;
-	int			choice;
 	int			num_play;
 	int			winner;
 
@@ -30,13 +40,10 @@ int		main(int ac, char **av)
 	num_play =  get_number_frst_player() % 2 + 1;
 	while (1)
 	{
-		if (num_play != NUM_IA)
-			choice = get_choice_player(puiss);
-		if ((add_one_piece(puiss, choice, num_play)) != NULL)
-			print_p4(puiss);
-		num_play = (num_play == 1) ? 2 : 1;
+		num_play = play(puiss, num_play);
+		printf("num_play = %d\n", num_play);
 		if ((winner = game_over(puiss)) != 0)
-			return (end_game(winner, puiss));
+			return (end_game(winner));
 	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 01:12:46 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 01:54:27 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/08 05:34:44 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_puiss		*i_a_puiss(t_puiss *p4)
 				while (i + 1 < p4->nb_lines && p4->array[i + 1][j] == 0)
 					i++;
 				p4->array[i][j] = NUM_IA;
+				p4->coins_ia--;
 				return (p4);
 			}
 			j++;
