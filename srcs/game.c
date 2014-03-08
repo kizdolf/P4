@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 02:29:48 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 04:01:20 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/08 04:38:06 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void		print_reason_even(int reason)
 
 
 
-int			end_game(int winner, t_puiss *p4)
+int			end_game(int winner)
 {
 	if (winner < 0)
 		print_reason_even(winner);
