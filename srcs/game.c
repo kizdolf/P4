@@ -6,12 +6,13 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 02:29:48 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 02:58:02 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/08 04:01:20 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/game.h"
 #include "../libft/libft.h"
+#include "../includes/ctrl.h"
 
 int			game_over(t_puiss *p4)
 {

@@ -6,7 +6,7 @@
 /*   By: jburet <jburet@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 10:11:34 by jburet            #+#    #+#             */
-/*   Updated: 2014/01/18 17:18:40 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/08 03:50:59 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ typedef struct			s_list
 	size_t				content_size;
 	struct	s_list 		*next;
 }						t_list;
+
+int		get_next_line(const int fd, char **line);
 
 int		ft_toupper(int c);
 

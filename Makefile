@@ -6,7 +6,7 @@
 #    By:jburet <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/02/27 12:38:23 by jburet            #+#    #+#              #
-#    Updated: 2014/03/08 01:13:08 by jburet           ###   ########.fr        #
+#    Updated: 2014/03/08 03:56:49 by jburet           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -19,6 +19,8 @@ SRCS = main.c \
 		fill_array.c \
 		players.c \
 		i_a_algo.c \
+		game.c \
+		ctrl_array.c \
 
 V = 0
 
