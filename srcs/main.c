@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 20:36:15 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 03:47:08 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/08 07:19:20 by ebelhadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int		main(int ac, char **av)
 	int			choice;
 	int			num_play;
 	int			winner;
+
 
 	if (!check_entry(ac, av))
 		return (1);
