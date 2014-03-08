@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 02:30:59 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 04:01:18 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/08 04:38:42 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include "main.h"
 
 int			game_over(t_puiss *p4);
-int			end_game(int winner, t_puiss *p4);
+int			end_game(int winner);
 
 
 #endif /*GAME_H*/
