@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 03:05:08 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 06:44:40 by ebelhadj         ###   ########.fr       */
+/*   Updated: 2014/03/09 12:28:53 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,18 @@ int			ctrl_vertical(t_puiss *p4)
 {
 	int		i;
 	int		j;
+	int		who;
 
 	i = 0;
-	while (i + 3 < p4->nb_col)
+	while (i + 3 < p4->nb_lines)
 	{
 		j = 0;
-		while (j < p4->nb_lines)
+		while (j < p4->nb_col)
 		{
 			if (p4->array[i][j] != 0)
 			{
-				if (vertical_win(i, j,  p4->array) == 1)
-					return (1);
+				if ((who = vertical_win(i, j,  p4->array)) != 0)
+					return (who);
 			}
 			j++;
 		}
@@ -40,17 +41,18 @@ int			ctrl_horizontal(t_puiss *p4)
 {
 	int		i;
 	int		j;
+	int		who;
 
 	i = 0;
-	while (i + 3 < p4->nb_col)
+	while (i < p4->nb_lines)
 	{
 		j = 0;
-		while (j < p4->nb_lines)
+		while (j + 3< p4->nb_col)
 		{
 			if (p4->array[i][j] != 0)
 			{
-				if (horizontal_win(i, j, p4->array) == 1)
-					return (1);
+				if ((who = horizontal_win(i, j, p4->array)) != 0)
+					return (who);
 			}
 			j++;
 		}
@@ -61,7 +63,25 @@ int			ctrl_horizontal(t_puiss *p4)
 
 int			ctrl_diagonal(t_puiss *p4)
 {
-	p4++;
+	int		i;
+	int		j;
+	int		who;
+
+	i = 0;
+	while (i + 3 < p4->nb_lines)
+	{
+		j = 0;
+		while (j + 3 < p4->nb_col)
+		{
+			if (p4->array[i][j] != 0)
+			{
+				if ((who = diagonal_win(i, j, p4)) != 0)
+					return (who);
+			}
+			j++;
+		}
+		i++;
+	}
 	return (0);
 }
 
@@ -76,7 +96,7 @@ int			array_is_full(t_puiss *p4)
 		j = 0;
 		while (j <= p4->nb_lines)
 		{
-			if (p4->array[i][j] != 0)
+			if (p4->array[i][j] == 0)
 				return (0);
 			j++;
 		}

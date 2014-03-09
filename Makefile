@@ -6,7 +6,7 @@
 #    By:jburet <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/02/27 12:38:23 by jburet            #+#    #+#              #
-#    Updated: 2014/03/08 08:09:10 by jburet           ###   ########.fr        #
+#    Updated: 2014/03/09 11:39:30 by jburet           ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -30,7 +30,7 @@ SILENCE_0 :=@
 SILENCE = $(SILENCE_$(V))
 
 INCLUDE = ./includes
-CFLAGS = -g -Wall -Werror -Wextra
+CFLAGS = -g
 CC = $(SILENCE)gcc
 RM = $(SILENCE)rm -rf
 MAKE = $(SILENCE)make V=$(V)
@@ -51,7 +51,6 @@ U = $(C)[$(NAME)]----->\033[0m
 all: $(NAME)
 
 $(NAME):$(OBJS)
-	@make -C ./libft/
 	@echo "$(U)$(C)[COMPILE:\033[1;32m DONE\033[0;33m]\033[0m"
 	@echo "$(U)$(C)[BUILD]\033[0;32m"
 	$(CC) -o $(NAME) $(OBJS) $(CFLAGS) $(INCLUDES)

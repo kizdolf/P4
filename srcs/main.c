@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 20:36:15 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 06:12:39 by ebelhadj         ###   ########.fr       */
+/*   Updated: 2014/03/09 11:24:33 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int			play(t_puiss *p4, int num_play)
 {
 	int		choice;
 
+	choice = 0;
 	if (num_play != NUM_IA)
 		choice = get_choice_player(p4);
 	if (add_one_piece(p4, choice, num_play) != NULL)

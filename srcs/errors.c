@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 21:51:41 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 04:35:02 by ebelhadj         ###   ########.fr       */
+/*   Updated: 2014/03/09 12:33:06 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,15 @@ int			error_entry(int type_error, int flag)
 		else if (type_error == ERROR_SIZE)
 		{
 			ft_putendl("Error : the map you are trying to load is too big.");
-			ft_putendl("Hint : 20 is the largest size of line/columns the program alow you to enter.");
+			ft_putendl("Hint : 20 is the largest size of line/columns the \
+					program alow you to enter.");
 		}
 	}
 	else
 	{
 		ft_putendl("Error : the map you are trying to load is too small.");
-		ft_putendl("Hint : 6 is the smallest size of lines/columns the program alow you to enter.");
+		ft_putendl("Hint : 6 is the smallest size of lines/columns the program\
+				alow you to enter.");
 	}
 	ft_putstr("\033[0m");
 	return (0);
