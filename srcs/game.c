@@ -6,13 +6,14 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 02:29:48 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 12:00:28 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 13:10:27 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/game.h"
 #include "../libft/libft.h"
 #include "../includes/ctrl.h"
+#include "../includes/array.h"
 
 int			game_over(t_puiss *p4)
 {
@@ -45,8 +46,9 @@ static void		print_reason_even(int reason)
 
 
 
-int			end_game(int winner)
+int			end_game(int winner, t_puiss *p4)
 {
+	print_p4(p4);
 	if (winner < 0)
 		print_reason_even(winner);
 	else

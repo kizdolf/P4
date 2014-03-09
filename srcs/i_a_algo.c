@@ -6,14 +6,16 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 01:12:46 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 05:34:44 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 13:06:18 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/i_a.h"
 #include "../includes/main.h"
 
-t_puiss		*i_a_puiss(t_puiss *p4)
+
+
+int			i_a_puiss(t_puiss *p4)
 {
 	int		i;
 	int		j;
@@ -31,11 +33,11 @@ t_puiss		*i_a_puiss(t_puiss *p4)
 					i++;
 				p4->array[i][j] = NUM_IA;
 				p4->coins_ia--;
-				return (p4);
+				return (2);
 			}
 			j++;
 		}
 		i++;
 	}
-	return (NULL);
+	return (0);
 }
