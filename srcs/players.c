@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 23:48:21 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 01:00:32 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 15:12:28 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@
 
 int			get_number_frst_player(void)
 {
-	unsigned		date;
+	unsigned int	date;
 
 	date = (unsigned)time(NULL);
 	srand(date);
-	printf("srand(time()) = %d\n", (int)date);
 	return ((int)date);
 }

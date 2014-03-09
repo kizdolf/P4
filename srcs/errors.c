@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 21:51:41 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 12:33:06 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 13:45:36 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,16 @@ int			error_entry(int type_error, int flag)
 	if (flag == 0)
 	{
 		if (type_error == ERROR_AC)
-		{
-			ft_putendl("Error : wrong number of arguments.");
-			ft_putendl("Hint : need two arguments.");
-		}
+			ft_putendl(AC);
 		else if (type_error == ERROR_TYPE_COL)
 			ft_putendl("Error in the type of columns.");
 		else if (type_error == ERROR_TYPE_LIN)
 			ft_putendl("Error in the type of lines.");
 		else if (type_error == ERROR_SIZE)
-		{
-			ft_putendl("Error : the map you are trying to load is too big.");
-			ft_putendl("Hint : 20 is the largest size of line/columns the \
-					program alow you to enter.");
-		}
+			ft_putendl(SIZE1);
 	}
 	else
-	{
-		ft_putendl("Error : the map you are trying to load is too small.");
-		ft_putendl("Hint : 6 is the smallest size of lines/columns the program\
-				alow you to enter.");
-	}
+		ft_putendl(SIZE2);
 	ft_putstr("\033[0m");
 	return (0);
 }

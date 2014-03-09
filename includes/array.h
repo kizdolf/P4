@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 22:20:57 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/07 23:23:38 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 13:06:56 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_puiss		*init_puiss(t_puiss *p4);
 /*
  * fill_array.c
  */
-t_puiss		*add_one_piece(t_puiss *p4, int nb_col, int num_player);
+int			add_one_piece(t_puiss *p4, int nb_col, int num_player);
 int			get_choice_player(t_puiss *p4);
 
 #endif /*ARRAY_H*/

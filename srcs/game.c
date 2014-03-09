@@ -6,15 +6,16 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 02:29:48 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 12:00:28 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 15:09:22 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/game.h"
 #include "../libft/libft.h"
 #include "../includes/ctrl.h"
+#include "../includes/array.h"
 
-int			game_over(t_puiss *p4)
+int				game_over(t_puiss *p4)
 {
 	int		winner;
 
@@ -30,11 +31,7 @@ int			game_over(t_puiss *p4)
 		return (winner);
 	return (0);
 }
-/*
- * TO DO BETTER : Mettre des couleurs selon les gagnants perdant.
- * reagarder dans les couleurs du shell (exemple dans le Makefile)
- * c'est des truc genre [033m . Des balises en tout cas.
- */
+
 static void		print_reason_even(int reason)
 {
 	if (reason == -1)
@@ -45,8 +42,9 @@ static void		print_reason_even(int reason)
 
 
 
-int			end_game(int winner)
+int				end_game(int winner, t_puiss *p4)
 {
+	print_p4(p4);
 	if (winner < 0)
 		print_reason_even(winner);
 	else

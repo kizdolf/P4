@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 21:46:22 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 04:31:08 by ebelhadj         ###   ########.fr       */
+/*   Updated: 2014/03/09 13:46:27 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 # define MAX_LINE 20
 # define MAX_COL 20
 # define ERROR_SIZE 10
+# define AC "Error : wrong number of arguments. \nHint : need two arguments."
+# define SIZE1 "Error : the map you are trying to load is too big.\nHint :\
+	20 is the largest size of line/columns the program accept"
+# define SIZE2 "Error : the map you are trying to load is too small.\n \
+	Hint : 6 is the smallest size of lines/columns the program accept"
 
 int			check_entry(int ac, char **av);
 int			error_entry(int type_error, int flag);

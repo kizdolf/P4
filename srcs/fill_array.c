@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 23:12:21 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 05:50:45 by ebelhadj         ###   ########.fr       */
+/*   Updated: 2014/03/09 15:08:37 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,10 @@
 #include "../includes/i_a.h"
 #include <stdlib.h>
 
-t_puiss		*add_one_piece(t_puiss *p4, int nb_col, int num_player)
+int			add_one_piece(t_puiss *p4, int nb_col, int num_player)
 {
 	int		line;
 
-	printf("DEBUG add_one_piece: num_player = %d, choice = %d\n", num_player, nb_col);
 	if (num_player == NUM_IA)
 		return (i_a_puiss(p4));
 	line = p4->nb_lines - 1;
@@ -30,11 +29,11 @@ t_puiss		*add_one_piece(t_puiss *p4, int nb_col, int num_player)
 	{
 		ft_putendl("Impossible choice");
 		add_one_piece(p4, get_choice_player(p4), num_player);
-		return (NULL);
+		return (0);
 	}
 	p4->array[line][nb_col] = num_player;
 	p4->coins_play--;
-	return (p4);
+	return (1);
 }
 
 int			get_choice_player(t_puiss *p4)
