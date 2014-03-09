@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/09 15:57:25 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 18:23:08 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 20:47:58 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,18 @@ int		i_a_ctrl_hor_vert(t_puiss *p4, t_crd c, int sym, int nb)
 	{
 		i = c.l + nb;
 		j = c.l;
-		while (j < i && nope == 1)
-			nope = (p4->array[j++][c.c] != sym) ? 0 : 1;
+		while (j < i)
+		{
+			if (p4->array[j][c.c] != sym)
+			{
+				nope = 0;
+				if (j + 1 < i && p4->array[j + 1][c.c] == sym)
+					nope = 1;
+			}
+			j++;
+		}
+		if (c.l > 0 && p4->array[c.l - 1][c.c] != 0)
+			nope = 0;
 	}
 	else
 		nope = 0;
@@ -37,7 +47,15 @@ int		i_a_ctrl_hor_vert(t_puiss *p4, t_crd c, int sym, int nb)
 		nope = 1;
 		i = c.c + nb;
 		j = c.c;
-		while (j < i && nope == 1)
+		while (j < i)
+		{
+			if (p4->array[j][c.c] != sym)
+			{
+				if (j + 1 < i && p4->array[c.l][j + 1] != sym)
+					nope = 0;
+			}
+			j++;
+		}
 			nope = (p4->array[c.l][j++] != sym) ? 0 : 1;
 	}
 	printf("bef end i_a_ctrl_hor_vert : nope = %d ret = %d.\n", nope, ret);
@@ -67,7 +85,7 @@ int		play_ia(t_puiss *p4, int col)
 	if (p4->array[i][col] == 0)
 	{
 		p4->array[i][col] = NUM_IA;
-		return (1);
+		return (2);
 	}
 	return (0);
 }

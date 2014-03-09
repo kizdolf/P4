@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 23:12:21 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 15:08:37 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 21:06:54 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int			add_one_piece(t_puiss *p4, int nb_col, int num_player)
 	int		line;
 
 	if (num_player == NUM_IA)
-		return (i_a_puiss(p4));
+		return (i_a_turn(p4));
 	line = p4->nb_lines - 1;
 	while (line >= 0 && p4->array[line][nb_col] && p4->array[line][nb_col] != 0)
 		line--;
@@ -40,15 +40,22 @@ int			get_choice_player(t_puiss *p4)
 {
 	int		choice;
 	char	*gnl;
+	int		i;
+	int		stop;
 
 	choice = -1;
 	while (choice < 0 || choice > p4->nb_col)
 	{
-		ft_putendl("please enter the column number you wish yo play in :");
+		stop = 0;
+		ft_putendl("please enter the column number you wish to play in :");
 		get_next_line(0, &gnl);
-		if (ft_strstr(gnl, "exit") != NULL)
-			exit (0);
-		if ((choice = ft_atoi(gnl)) <= 0)
+		i = 0;
+		while (gnl[i])
+		{
+			if (!ft_isdigit(gnl[i++]))
+				stop = 1;
+		}
+		if ((choice = ft_atoi(gnl)) <= 0 || stop == 1)
 		{
 			ft_putendl("Wrong type of command.");
 			choice = -1;

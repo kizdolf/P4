@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 03:05:08 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 13:20:52 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 20:38:41 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int			ctrl_diagonal(t_puiss *p4)
 	int		who;
 
 	i = 0;
-	while (i + 3 < p4->nb_lines)
+	while (i < p4->nb_lines)
 	{
 		j = 0;
 		while (j + 3 < p4->nb_col)
