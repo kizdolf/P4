@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 03:05:08 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 12:28:53 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 13:16:15 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,6 +107,9 @@ int			array_is_full(t_puiss *p4)
 
 int			player_no_coins(t_puiss *p4)
 {
-	p4++;
+	if (p4->coins_ia <= 0)
+		return (1);
+	if (p4->coins_play <= 0)
+		return (1);
 	return (0);
 }
