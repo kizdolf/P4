@@ -6,13 +6,13 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 22:20:57 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 13:06:56 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 21:16:58 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_H
 # define ARRAY_H
-#include "main.h"
+# include "main.h"
 
 /*
  * array.c

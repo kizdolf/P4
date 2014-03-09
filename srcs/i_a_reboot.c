@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/09 19:50:58 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 20:47:18 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 21:48:27 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 static int				win(t_puiss *p4, int l, int c, int sym)
 {
-	printf("l = %d, c = %d. sym = %d\n", l, c, sym);
-	printf("p4: nb_col = %d, nb_lines = %d.\n", p4->nb_col, p4->nb_lines);
-	int i = l;
 	if (c + 3 < p4->nb_col && p4->array[l][c + 1] == sym && \
 			p4->array[l][c + 2] == sym && p4->array[l][c + 3] == 0)
 		return (c + 3);
@@ -30,7 +27,6 @@ static int				win(t_puiss *p4, int l, int c, int sym)
 	if (l - 3 > 0 && c - 3 > 0 && p4->array[l - 1][c - 1] == sym && \
 			p4->array[l - 2][c - 2] == sym && p4->array[l - 3][c - 3] == 0)
 		return (c - 3);
-	printf("win return -1\n");
 	return (-1);
 }
 
@@ -58,7 +54,7 @@ static int				parse_win(t_puiss *p4, int sym)
 	return (0);
 }
 
-int				i_a_turn(t_puiss *p4)
+int						i_a_turn(t_puiss *p4)
 {
 	int		c;
 

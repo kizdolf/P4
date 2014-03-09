@@ -1,14 +1,14 @@
-#******************************************************************************#
+# **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By:jburet <marvin@42.fr>                       +#+  +:+       +#+         #
+#    By: jburet <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2014/02/27 12:38:23 by jburet            #+#    #+#              #
-#    Updated: 2014/03/09 21:09:06 by jburet           ###   ########.fr        #
+#    Created: 2014/03/09 21:17:23 by jburet            #+#    #+#              #
+#    Updated: 2014/03/09 21:46:22 by jburet           ###   ########.fr        #
 #                                                                              #
-#******************************************************************************#
+# **************************************************************************** #
 
 NAME = Puissance4
 
@@ -31,14 +31,14 @@ SILENCE_0 :=@
 SILENCE = $(SILENCE_$(V))
 
 INCLUDE = ./includes
-CFLAGS = -g
+CFLAGS = -Wall -Werror -Wextra
 CC = $(SILENCE)gcc
 RM = $(SILENCE)rm -rf
 MAKE = $(SILENCE)make V=$(V)
 
 SRCPATH = ./srcs/
 
-INCLUDES = -I$(INCLUDE) -L libft -lft
+INCLUDES = -I$(INCLUDE)
 
 SRC = $(addprefix $(SRCPATH), $(SRCS))
 OBJS= $(SRC:.c=.o)
@@ -54,14 +54,14 @@ all: $(NAME)
 $(NAME):$(OBJS)
 	@echo "$(U)$(C)[COMPILE:\033[1;32m DONE\033[0;33m]\033[0m"
 	@echo "$(U)$(C)[BUILD]\033[0;32m"
-	$(CC) -o $(NAME) $(OBJS) $(CFLAGS) $(INCLUDES)
+	$(CC) -o $(NAME) $(OBJS) $(CFLAGS) $(INCLUDES) -L libft -lft
 	@echo "$(SKIP)\033[2K$(SKIP)\033[2K"
 	@echo "$(SKIP)$(U)$(C)[BUILD  :\033[1;32m DONE$(C)]\033[0m"
 
 %.o: %.c
 	@echo "$(U)$(C)[COMPILE: \033[1;31m$<\033[A\033[0m"
 	@echo "\033[0;32m"
-	$(CC) -o $@ $(CFLAGS) $(INCLUDES) -c $<
+	$(CC) -o $@ $(CFLAGS) $(INCLUDES) -c -I./libft $<
 	@echo "\033[1;31m [.working.]"
 	@echo "$(SKIP)\033[2K\033[A\033[2K$(SKIP)"
 
@@ -78,3 +78,4 @@ fclean: clean
 re: fclean all
 
 .PHONY: clean fclean
+

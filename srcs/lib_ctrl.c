@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 05:42:30 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 20:54:36 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 21:14:14 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		horizontal_win(int i, int j, int **tab)
 int		diagonal_win(int i, int j, t_puiss *p4)
 {
 	int		who;
-	int 	k;
+	int		k;
 	int		l;
 
 	l = i;

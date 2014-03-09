@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 20:36:15 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 15:11:51 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 21:46:43 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int				main(int ac, char **av)
 	while (1)
 	{
 		num_play = play(puiss, num_play);
-		printf("num_play = %d\n", num_play);
 		if ((winner = game_over(puiss)) != 0)
 			return (end_game(winner, puiss));
 	}

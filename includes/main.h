@@ -6,13 +6,12 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 20:38:02 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 17:23:04 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 21:21:49 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAIN_H
 # define MAIN_H
-# include <stdio.h>
 # define NUM_IA 2
 # define NUM_PL 1
 # define NB_COINS 21
