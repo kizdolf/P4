@@ -6,33 +6,40 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 01:12:46 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 15:09:59 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 15:33:18 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/i_a.h"
 #include "../includes/main.h"
 
+int			nb_are_align(int **tab, t_crd c, int sym, int nb)
+{
+	return (1);
+}
+
+void		play_to_win(t_puiss *p4, t_crd c, int style)
+{
+}
+
 void		i_a_try_win(t_puiss *p4)
 {
-	/*
-	int		i;
-	int		j;
+	
 	int		style;
+	t_crd	c;
 
-	i = 0;
-	while (i <p4->nb_lines)
+	c.l = 0;
+	while (c.l <p4->nb_lines)
 	{
-		j = 0;
-		if (p4->array[i][j] == NUM_IA)
+		c.c = 0;
+		if (p4->array[c.l][c.c] == NUM_IA)
 		{
-			if ((style = three_align(p4->array, i, j, NUM_IA)) != 0)
-				return (play_to_win(p4, i, j, style);
+			if ((style = nb_are_align(p4->array, c, NUM_IA, 3)) != 0)
+				play_to_win(p4, c, style);
 		}
-		j++;
+		c.c++;
 	}
-	i++;
-	*/
+	c.l++;
 }
 
 int			i_a_puiss(t_puiss *p4)
