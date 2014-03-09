@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 01:12:46 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 17:28:43 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 17:39:58 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ int			nb_are_align(t_puiss *p4, t_crd c, int sym, int nb)
 	if (c.c + nb < p4->nb_col && c.l + nb < p4->nb_lines)
 	{
 		i = 0;
-		while (i < nb && nope == 1)
+		while (i++ < nb && nope == 1)
 			nope = (p4->array[c.l++][c.c++] != sym) ? 0 : 1;
 	}
 	else
 		nope = 0;
 	ret += (nope == 1) ? W_DIAG_R : 0;
 	c = tmp;
-	if (c.c - nb > 0 && c.l - nb > 0)
+	if (c.c - nb > 1 && c.l - nb > 1)
 	{
 		nope = 1;
 		i = 0;
-		while (i < nb)
+		while (i++ < nb && nope == 1)
 			nope = (p4->array[c.l--][c.c--] != sym) ? 0 : 1;
 	}
 	ret += (nope == 1) ? W_DIAG_L : 0;
