@@ -6,7 +6,7 @@
 #    By: jburet <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/03/09 21:17:23 by jburet            #+#    #+#              #
-#    Updated: 2014/03/09 21:46:22 by jburet           ###   ########.fr        #
+#    Updated: 2014/03/09 21:59:55 by jburet           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,9 @@ U = $(C)[$(NAME)]----->\033[0m
 all: $(NAME)
 
 $(NAME):$(OBJS)
+	@echo "$(U)$(C)[LIBFT: \033[1;31m$<\033[A\033[0m"
+	@echo "\033[0;32m"
+	make -C ./libft
 	@echo "$(U)$(C)[COMPILE:\033[1;32m DONE\033[0;33m]\033[0m"
 	@echo "$(U)$(C)[BUILD]\033[0;32m"
 	$(CC) -o $(NAME) $(OBJS) $(CFLAGS) $(INCLUDES) -L libft -lft
@@ -67,6 +70,8 @@ $(NAME):$(OBJS)
 
 clean:
 	@echo "$(U)$(C)[CLEAN]\033[1;32m"
+	@echo "$(U)$(C)[LIBFT: \033[1;31m$<\033[A\033[0m"
+	@echo "\033[0;32m"
 	$(RM) $(OBJS)
 	@echo "$(SKIP)$(U)$(C)[CLEAN:\033[1;32m   DONE$(C)]\033[0m"
 
