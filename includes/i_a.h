@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 01:13:24 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 17:21:44 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 18:23:22 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,6 @@ int			play_to_win(t_puiss *p4, t_crd c, int style);
  */
 int			i_a_ctrl_hor_vert(t_puiss *p4, t_crd c, int sym, int nb);
 int			style_simple(int style);
-void		play_ia(t_puiss *p4, int col);
+int			play_ia(t_puiss *p4, int col);
 
 #endif /*I_A_H*/

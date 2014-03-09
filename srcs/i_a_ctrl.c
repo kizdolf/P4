@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/09 15:57:25 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 17:20:52 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 18:23:08 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int		style_simple(int style)
 	return (0);
 }
 
-void	play_ia(t_puiss *p4, int col)
+int		play_ia(t_puiss *p4, int col)
 {
 	int		i;
 
@@ -64,5 +64,10 @@ void	play_ia(t_puiss *p4, int col)
 		printf("PLAY: i == %d. col = %d.\n", i, col);
 		i--;
 	}
-	p4->array[i][col] = NUM_IA;
+	if (p4->array[i][col] == 0)
+	{
+		p4->array[i][col] = NUM_IA;
+		return (1);
+	}
+	return (0);
 }

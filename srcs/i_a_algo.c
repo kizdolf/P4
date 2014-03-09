@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 01:12:46 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 18:05:51 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 18:26:29 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,24 +53,24 @@ int		play_to_win(t_puiss *p4, t_crd c, int style)
 	if (style_simple(style))
 	{
 		if (style == W_HOR)
-			play_ia(p4, c.c + 3);
+			return (play_ia(p4, c.c + 3));
 		else if (style == W_VERT)
-			play_ia(p4, c.c);
+			return (play_ia(p4, c.c));
 		else if (style == W_DIAG_R)
-			play_ia(p4, c.c + 3);
+			return (play_ia(p4, c.c + 3));
 		else if (style == W_DIAG_L)
-			play_ia(p4, c.c - 3);
+			return (play_ia(p4, c.c - 3));
 		return (1);
 	}
 	else
 	{
 		if (style == 3 || style == 5 || style == 7 || style == 9 || style ==\
 				11 || style == 13 || style == 15)
-			play_ia(p4, c.c + 3);
+			return (play_ia(p4, c.c + 3));
 		else if (style == 6 || style == 10 || style == 14)
-			play_ia(p4, c.c);
+			return (play_ia(p4, c.c));
 		else 
-			play_ia(p4, c.c + 3);
+			return (play_ia(p4, c.c + 3));
 		return (1);
 	}
 	return (0);
@@ -82,6 +82,7 @@ int			i_a_try_win(t_puiss *p4)
 	t_crd	c;
 
 	printf("i_a_try_win en cours.\n");
+	printf("lol");
 	c.l = 0;
 	while (c.l < p4->nb_lines)
 	{
@@ -95,7 +96,7 @@ int			i_a_try_win(t_puiss *p4)
 			}
 			if (p4->array[c.l][c.c] == NUM_PL)
 			{
-				if ((style = nb_are_align(p4, c, NUM_PL, 3)) != 0)
+				if ((style = nb_are_align(p4, c, NUM_PL, 2)) != 0)
 					return (play_to_win(p4, c, style));
 			}
 			c.c++;
