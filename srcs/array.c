@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 22:20:05 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 07:54:43 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 04:56:40 by ebelhadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_puiss		*new_puiss(char **av)
 	}
 	if ((p4->nb_lines = ft_atoi(av[2])) < 6)
 	{
-		if (error_entry(p4->nb_lines, 2) == 0)
+		if (error_entry(p4->nb_lines, 1) == 0)
 		return (NULL);
 	}
 	p4->array = (int **)ft_memalloc(sizeof(int *) * (p4->nb_lines + 1));
@@ -62,9 +62,17 @@ static void	print_one_case(int line, int col, t_puiss *p4)
 	if (p4->array[line][col] == 0)
 		ft_putchar(' ');
 	else if (p4->array[line][col] == 1)
+	{
+		ft_putstr("\033[31m");
 		ft_putchar('X');
+		ft_putstr("\033[0m");
+	}
 	else if (p4->array[line][col] == 2)
-		ft_putchar('0');
+	{
+		ft_putstr("\033[33m");
+		ft_putstr("0");
+		ft_putstr("\033[0m");
+	}
 	else
 		ft_putstr(ft_itoa(p4->array[line][col]));
 	ft_putchar(' ');

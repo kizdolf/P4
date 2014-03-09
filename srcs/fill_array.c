@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 23:12:21 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 05:33:49 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 05:50:45 by ebelhadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "../libft/libft.h"
 #include "../includes/main.h"
 #include "../includes/i_a.h"
+#include <stdlib.h>
 
 t_puiss		*add_one_piece(t_puiss *p4, int nb_col, int num_player)
 {
@@ -27,7 +28,7 @@ t_puiss		*add_one_piece(t_puiss *p4, int nb_col, int num_player)
 		line--;
 	if (line < 0)
 	{
-		ft_putendl("choice impossible.");
+		ft_putendl("Impossible choice");
 		add_one_piece(p4, get_choice_player(p4), num_player);
 		return (NULL);
 	}
@@ -46,8 +47,13 @@ int			get_choice_player(t_puiss *p4)
 	{
 		ft_putendl("please enter the column number you wish yo play in :");
 		get_next_line(0, &gnl);
+		if (ft_strstr(gnl, "exit") != NULL)
+			exit (0);
 		if ((choice = ft_atoi(gnl)) <= 0)
+		{
+			ft_putendl("Wrong type of command.");
 			choice = -1;
+		}
 	}
 	return (choice - 1);
 }

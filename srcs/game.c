@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 02:29:48 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 04:38:06 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 06:35:56 by ebelhadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int			game_over(t_puiss *p4)
 {
 	int		winner;
 
-	if ((winner = array_is_full(p4)))
+	if ((winner = array_is_full(p4)) == -1)
 		return (-1);
 	if ((winner = player_no_coins(p4)))
 		return (-2);

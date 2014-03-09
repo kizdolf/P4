@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 20:38:02 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 03:03:29 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 05:51:07 by ebelhadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include <stdio.h>
 # define NUM_IA 2
 # define NB_COINS 21
+
 /*
  * Struct de la grille
  */

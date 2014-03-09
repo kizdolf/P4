@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 03:05:45 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 05:53:24 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 06:05:36 by ebelhadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ int			array_is_full(t_puiss *p4);
  * lib_ctrl.c
  */
 int		horizontal_win(int i, int j, int **tab);
-
+int		vertical_win(int i, int j, int **tab);
 #endif /*CTRL_H*/

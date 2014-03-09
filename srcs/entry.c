@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 21:42:09 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/08 07:50:05 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 04:31:16 by ebelhadj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@ int			check_entry(int ac, char **av)
 		return (error_entry(ERROR_TYPE_COL, 0));
 	if ((nb_lines = ft_atoi(av[2])) == 0)
 		return (error_entry(ERROR_TYPE_LIN, 0));
+	if (nb_lines > MAX_LINE || nb_col > MAX_COL)
+		return (error_entry(ERROR_SIZE, 0));
 	return (1);
 }
