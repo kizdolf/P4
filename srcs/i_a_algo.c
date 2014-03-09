@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 01:12:46 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 17:39:58 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 18:05:51 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,8 +95,8 @@ int			i_a_try_win(t_puiss *p4)
 			}
 			if (p4->array[c.l][c.c] == NUM_PL)
 			{
-				if ((style = nb_are_align(p4, c, NUM_PL, 2)) != 0)
-				return (play_to_win(p4, c, style));
+				if ((style = nb_are_align(p4, c, NUM_PL, 3)) != 0)
+					return (play_to_win(p4, c, style));
 			}
 			c.c++;
 		}
