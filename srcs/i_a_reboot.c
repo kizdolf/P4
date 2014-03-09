@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/09 19:50:58 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 21:48:27 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 22:23:53 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ static int				win(t_puiss *p4, int l, int c, int sym)
 			== sym && p4->array[l + 2][c + 2] == sym && \
 			p4->array[l + 3][c + 3] == 0)
 		return (c + 3);
-	if (l - 3 > 0 && c - 3 > 0 && p4->array[l - 1][c - 1] == sym && \
-			p4->array[l - 2][c - 2] == sym && p4->array[l - 3][c - 3] == 0)
+	if (l + 3 < p4->nb_lines && c > 3 && p4->array[l + 1][c - 1] == sym && \
+			p4->array[l + 2][c - 2] == sym && p4->array[l + 3][c - 3] == 0)
 		return (c - 3);
 	return (-1);
 }

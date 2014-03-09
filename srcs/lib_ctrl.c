@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 05:42:30 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 21:14:14 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 22:26:07 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,12 @@ int		diagonal_win(int i, int j, t_puiss *p4)
 			p4->array[i + 1][j + 1] == who && p4->array[i + 2][j + 2] == who \
 			&& p4->array[i + 3][j + 3] == who)
 		return (who);
-	if (i < 3 || j < 3)
+	if (l + 5 < p4->nb_lines || k < 3)
 		return (0);
 	i = l;
 	j = k;
-	if (i - 3 < p4->nb_col && j - 3 < p4->nb_lines && \
-			p4->array[i - 1][j - 1] == who && p4->array[i - 2][j - 2] == who \
-			&& p4->array[i - 3][j - 3] == who)
+	if (i + 3 < p4->nb_lines && j > 3 && p4->array[i + 1][j - 1] == who && \
+			p4->array[i + 2][j - 2] == who && p4->array[i + 3][j - 3] == who)
 		return (who);
 	return (0);
 }
