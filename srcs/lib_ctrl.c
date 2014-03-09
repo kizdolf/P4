@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/08 05:42:30 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 12:22:45 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 15:10:39 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		vertical_win(int i, int j, int **tab)
 
 int		horizontal_win(int i, int j, int **tab)
 {
-	int cmp;
+	int		cmp;
 
 	cmp = tab[i][j];
 	if (tab[i][j + 1] == cmp && tab[i][j + 2] == cmp && tab[i][j + 3] == cmp)

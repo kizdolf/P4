@@ -6,7 +6,7 @@
 /*   By: jburet <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/07 23:12:21 by jburet            #+#    #+#             */
-/*   Updated: 2014/03/09 13:07:00 by jburet           ###   ########.fr       */
+/*   Updated: 2014/03/09 15:08:37 by jburet           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int			add_one_piece(t_puiss *p4, int nb_col, int num_player)
 {
 	int		line;
 
-	printf("DEBUG add_one_piece: num_player = %d, choice = %d\n", num_player, nb_col);
 	if (num_player == NUM_IA)
 		return (i_a_puiss(p4));
 	line = p4->nb_lines - 1;
